@@ -13,4 +13,5 @@ npm create vite@latest
 cd pandacss-ex1/
 npm install -D @pandacss/dev postcss
 npx panda init -p
+npx panda codegen
 ```

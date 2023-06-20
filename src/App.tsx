@@ -1,5 +1,6 @@
 import { circle, hstack, stack, center } from "../styled-system/patterns";
 import { css, cva } from "../styled-system/css";
+import { styled } from "../styled-system/jsx";
 
 const button = cva({
   base: { cursor: "pointer" },
@@ -25,6 +26,8 @@ const button = cva({
     size: "lg",
   },
 });
+
+const Button = styled("button", button);
 
 function App() {
   return (
@@ -61,8 +64,13 @@ function App() {
             </blockquote>
           </div>
         </div>
-
-        <button className={button({})}>Hi There</button>
+        <div className={stack({ bg: "yellow.100", padding: 4, gap: 10 })}>
+          <button className={button({ visual: "solid" })}>Hi There</button>
+          <button className={button({ visual: "outline" })}>Hi There</button>
+          <Button visual="outline" size="sm">
+            More Hi's
+          </Button>
+        </div>
       </div>
     </div>
   );
